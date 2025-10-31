@@ -1,0 +1,79 @@
+# Binary Semaphore Chat Backend - Git Ignore
+
+# C Daemon Build Artifacts
+c-daemon/obj/
+c-daemon/bin/
+c-daemon/*.o
+c-daemon/chat_daemon
+
+# Node.js
+node-api/node_modules/
+node-api/npm-debug.log*
+node-api/yarn-debug.log*
+node-api/yarn-error.log*
+
+# Environment files
+node-api/.env
+.env
+
+# Database files (runtime)
+*.db
+*.db-shm
+*.db-wal
+
+# Log files
+*.log
+logs/
+
+# Runtime directories
+/run/
+/var/lib/chat-system/
+/var/log/chat-system/
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Jest
+.nyc_output
+
+# ESLint cache
+.eslintcache
+
+# Frontend (React/Vite)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Package manager lock files (optional - you can keep these)
+# package-lock.json
+# yarn.lock
+
+# Build outputs
+build/
+dist/

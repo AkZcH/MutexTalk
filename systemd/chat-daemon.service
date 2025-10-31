@@ -1,0 +1,37 @@
+[Unit]
+Description=Binary Semaphore Chat Daemon
+Documentation=file:///opt/chat-system/README.md
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=chatsvc
+Group=chatsvc
+WorkingDirectory=/opt/chat-system
+ExecStart=/opt/chat-system/bin/chat_daemon
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5
+TimeoutStartSec=30
+TimeoutStopSec=30
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/chat-system /var/log/chat-system /run/chat-system
+CapabilityBoundingSet=CAP_DAC_OVERRIDE
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=chat-daemon
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

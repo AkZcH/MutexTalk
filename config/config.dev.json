@@ -1,0 +1,38 @@
+{
+  "daemon": {
+    "socket_path": "./data/daemon.sock",
+    "socket_permissions": "0660",
+    "max_connections": 100,
+    "connection_timeout": 30000
+  },
+  "database": {
+    "chat_db_path": "./data/chat.db",
+    "logs_db_path": "./data/logs.db",
+    "wal_mode": true,
+    "busy_timeout": 5000
+  },
+  "logging": {
+    "transaction_log_path": "./logs/transactions.log",
+    "log_permissions": "0600",
+    "max_log_size": "100MB",
+    "log_rotation": true
+  },
+  "security": {
+    "max_message_length": 2000,
+    "max_username_length": 64,
+    "semaphore_timeout": 300000,
+    "admin_users": ["admin"]
+  },
+  "api": {
+    "port": 3000,
+    "cors_origins": ["http://localhost:5173"],
+    "rate_limit": {
+      "window_ms": 900000,
+      "max_requests": 100
+    },
+    "jwt": {
+      "expires_in": "24h",
+      "algorithm": "HS256"
+    }
+  }
+}

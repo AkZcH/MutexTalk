@@ -1,0 +1,8 @@
+[Unit]
+Description=Binary Semaphore Chat System
+Documentation=file:///opt/chat-system/README.md
+Wants=chat-daemon.service chat-api.service
+After=chat-daemon.service chat-api.service
+
+[Install]
+WantedBy=multi-user.target
